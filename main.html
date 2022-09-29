@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blubberit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="DisplayAllPosts()">
+    <nav>
+<!-------nav left -->
+        <div class="nav-left">
+            <img src="Logo.jpg" class="logo">
+            <ul>
+                <li>
+                    <img class="notification" src="notification.png"><small class="notification-count">9+</small>
+                </li>
+                <li><img class="messages" id="message-notification" src="inbox.png">
+                <small class="notification-count">9</small></li>
+                <li><img src="video.png"></li>
+            </ul>
+        </div>
+<!-----nav right----------->
+        <div class="nav-right">
+            <div class="search-box">
+                <img src="search.png">
+                <input type="text" placeholder="search">
+            </div>
+            
+            <div class="nav-user-icon online">
+                <img class="profilePic" src="profile-pic.jpg">
+                
+            </div>
+            <div class="nav-Settings" onclick="settingsMenuToggle()">
+                <img src="setting.png">
+            </div> 
+        </div>
+<!-------------settings menu------------------>
+        <div class="settings-menu">
+            <div id="dark-btn">
+                <span></span>
+            </div>
+
+            <div class="settings-menu-inner">
+                <div class="user-profile">
+                    <img  class="profilePic" src="profile-pic.jpg" width="50px" height="40px">
+                    <div>
+                        <p class="userName">kikomeko bashir</p>
+                        <a href="#">change mode</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-profile">
+                    <img src="feedback.png" width="50px" height="40px">
+                    <div>
+                        <p>Give feedback</p>
+                        <a href="#">blubberit improve</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="setting-links">
+                    <img src="setting.png" class="settings-icon">
+                    <a href="#">Settings & Pirvacy<img src="arrow.png" width="10px">
+                    </a>
+                </div>
+                <div class="setting-links">
+                    <img src="help.png" class="settings-icon">
+                    <a href="#">Help & Support<img src="arrow.png" width="10px">
+                    </a>
+                </div>
+                <div class="setting-links">
+                    <img src="display.png" class="settings-icon">
+                    <a href="#">Display & Accessibility<img src="arrow.png" width="10px">
+                    </a>
+                </div>
+                <div class="setting-links">
+                    <img src="logout.png" class="settings-icon">
+                    <a href="#">Logout<img src="arrow.png" width="10px">
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </nav> 
+	<hr>
+    <div class="container">
+        <!-------------end of top nav------------------>
+        <!-------------left side------------------>
+        <div class="left-sidebar">
+            <div class="imp-links">
+                <a class="profile">
+                    <div class="profile-photo">
+                        <img  class="profilePic" src="profile-pic.jpg">
+                    </div>
+                    <div class="handle">
+                        <h3  class="userName">kiko</h3>
+                        <p class="text-muted">blubberit</p>
+                    </div>
+                </a>
+                <a class="home" href="#"><img src="home.png">Home</a>
+                <a class="friends" href="#" >
+                    
+                    <img src="friends.png">Friends</a>
+                   
+                    
+                <div class="friendsOn"  id="friendsOn" >
+                   
+                    <div class="friend">
+                        <div class="friends-pic">
+                            <img src="profile-1.jpg">
+                        </div>
+                        <div class="handle">
+                            <h3  class="userName">kiko</h3>
+                            <p class="text-muted">blubberit</p>
+                        </div>
+                    </div>
+                    
+                    <div class="friend">
+                        <div class="friends-pic">
+                            <img src="profile-1.jpg">
+                        </div>
+                        <div class="handle">
+                            <h3  class="userName">kiko</h3>
+                            <p class="text-muted">blubberit</p>
+                        </div>
+                    </div>
+                   
+                </div>
+                <a class="watch" href="#"><img src="watch.png">personal interests</a>
+            </div>
+                 <!------------hobbies--------------------------->
+            <div class="create-btn">
+                <label class="btn btn-primary" for="create-post" onclick="AddHobby()">Create</label>
+                <p><input id="hobbie name" type="text" placeholder="input your hobby">
+                </p>
+                
+            </div>
+           
+            <div class="shortcut-links" id="Hobbies"> 
+            </div>
+        </div>
+        <!------------end of left sidebar--------------------------->
+        <!------------middle--------------------------->
+        <div class="middle-content" >
+            <!-------------------post table-------------------------->
+            <div class="story-gallery">
+                <div class="story story1">
+                    <img src="upload.png">
+                    <p> Add story</p>
+                </div>
+                <div class="story story2">
+                    <img src="member-1.jpg">
+                    <p>Cham</p>
+                </div>
+                <div class="story story3">
+                    <img src="member2.jpg">
+                    <p>Elsa</p>
+                </div>
+                <div class="story story4">
+                    <img src="member3.jpg">
+                    <p>Mark</p>
+                </div>
+                <div class="story story5">
+                    <img src="member4.jpg">
+                    <p>gogi</p>
+                </div>
+            </div>
+             <!---==========create new post==========-->
+             <div class="write-post-container" id="middle content">
+                <div class="user-profile">
+                    <img  class="profilePic" src="kiko.jpg" width="50px" height="40px">
+                    <div>
+                        <p class="userName">kalungi travor</p>
+                    </div>
+                </div>
+                <div  class="post-input-container">
+                    <textarea rows="3" placeholder="Whats on your mind?" id="inputed text"></textarea>
+                    <div class="add-post-links">
+                        <a href="#"><img src="live-video.png">Live Video</a>
+                        <a href="#" onclick="InputFile()">
+                            <div style="display: none;">
+                                <input type="file" id="file input" onchange="LoadImg()" accept="image/*,video/*">
+                            </div>
+                            <img  src="photo.png">Photo/Video
+                        </a>
+                        <a href="#"><img src="feeling.png" >Feeling/Activity</a>
+
+                    </div>
+                    <div class="create-btn2">
+                        <label class="btn2 btn-primary2" for="create-post" onclick="AddPost('none')">Create</label>
+                   </div>
+                </div>
+            </div>
+            
+                <!---------------second post---------------------->   
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="member11.jpg" width="50px" height="40px">
+                        <div>
+                            <p>Desire Namanya</p>
+                            <span>12 JUNE 2024  10:35 AM</span>
+                        </div>
+                    </div>
+                    <a href="#"><img src="dots.png" width="4px"></a>
+                </div>
+               
+                <p class="post-text">Like,Share and try this video in your own time<span> @blubberit </span>
+                LEarners website with javaScript to make it more functional.<a href="#">
+                # work</a><a href="#">#YoutubeChannel</a></p>
+                <img src="member8.jpg" class="post-img">
+
+                <div class="post-row">
+                    <div class="activity-icon">
+                        <div><img src="like-blue.png">42</div>
+                        <div><img src="comments.png">3</div>
+                        <div><img src="share.png">8</div>
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="kiko.jpg"> <small><img src="down.png"></small>
+                    </div>
+                </div>
+            </div>
+            <!----------------third post-------------->   
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="profile-7.jpg" width="50px" height="40px">
+                        <div>
+                            <p>Nankya Elsa</p>
+                            <span>03 October 2018  12:25 AM</span>
+                        </div>
+                    </div>
+                    <a href="#"><img src="dots.png" width="4px"></a>
+                </div>
+               
+                <p class="post-text">Hangout <span> @blubberit </span> is inviting you to a get together party
+                to meet friends and share ideas about web development<a href="#">
+                # work</a><a href="#">#In Big Lab 2</a></p>
+                <img src="member5.jpg" class="post-img">
+
+                <div class="post-row">
+                    <div class="activity-icon">
+                        <div><img src="like-blue.png">170</div>
+                        <div><img src="comments.png">16</div>
+                        <div><img src="share.png">30</div>
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="kiko.jpg"> <small><img src="down.png"></small>
+                    </div>
+                </div>
+            </div>
+            <!---  -----------forth post----------------->   
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="profile-15.jpg" width="50px" height="40px">
+                        <div>
+                            <p>Peter Chambers</p>
+                            <span>27 MAY 2022  20:13 PM</span>
+                        </div>
+                    </div>
+                    <a href="#"><img src="dots.png" width="4px"></a>
+                </div>
+               
+                <p class="post-text">Enjoy<span> @blubberit</span>All the amazing
+                    projects i have done on my YoutubeChannel and leave a like or comment.<a href="#">
+                #blubberit work</a><a href="#">#YoutubeChannel</a></p>
+                <img src="member6.jpg" class="post-img">
+
+                <div class="post-row">
+                    <div class="activity-icon">
+                        <div><img src="like-blue.png">20</div>
+                        <div><img src="comments.png">1</div>
+                        <div><img src="share.png">2</div>
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="kiko.jpg"> <small><img src="down.png"></small>
+                    </div>
+                </div>
+            </div>
+                <!---           end of  posts-->   
+            <button type="button" class="load-more-btn">Load more</button>
+        </div>
+      <!------------end of middle---------------------->
+        <!------------right side---------------------->
+        <div class="right-sidebar">
+<!--=-------education history   ----------------->
+            <div class="top">
+                <div class="sidebar-title">
+                    <h>Educatoin background</h>
+                </div>
+                <div id="educ_bg">
+                    
+                    <div class="event">
+                        <div class="left-event">
+                            <h3>05</h3>
+                            <span>March</span>
+                        </div>
+                        <div class="right-event">
+                            <h4>Buzz Teens Awards</h4>
+                            <p><img src="profile-location.png">Lugogo </p>
+                            <a href="#">more Info</a>
+                            <input type="button" value="delete">
+                        </div>
+                        
+                    </div>
+                    <div class="event">
+                        <div class="left-event">
+                            <h3>05</h3>
+                            <span>March</span>
+                        </div>
+                        <div class="right-event">
+                            <h4>Social media</h4>
+                            <p><img src="profile-location.png">Kampala Uganda</p>
+                            <a href="#">more Info</a>
+                            <input type="button" value="delete">
+                        </div>
+
+
+                    </div>
+                </div>
+ <!--=-------adding education history   ----------------->
+                <div class="sidebar-title">
+                    <h>ADD education history</h>
+                    <div class="addtoggle-btn">
+                        <input type="button" value="add" onclick="educationtoggle()">
+                    </div>
+                </div>
+                <div class="education-form"  id="education-form" >
+                    <div class="form-popup">
+                        <div >
+                            <span>Instution</span>
+                            <span><img src="location.png" width="20px"><input type="text" placeholder="Institution" id="insititution" >
+                            </span><br>
+                            <span>Year</span>
+                            <span><img src="date.png" width="20px"><input type="date" placeholder="the year" id="date">
+                            </span><br>
+                            <span>Award</span>
+                            <span><img src="degree.png" width="20px"><input type="text" placeholder="enter the Award" id="award">
+                            </span>
+                            <br>
+                            <div class="create-btn">
+                                <label class="btn btn-primary" for="create-post" onclick="AddEducation()">Add</label>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copright 2022 - #Blubberit</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

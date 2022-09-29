@@ -1,0 +1,204 @@
+*{
+   padding:0; 
+    margin: 0;
+    
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+    background:orange;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50;
+    
+}
+.profile-pic{
+    align-items: center;
+    justify-content: center;
+}
+.profile-pic .wrapper{
+    margin-top: -40px;
+    position: relative;
+    margin-left: 70px;
+    width: 60%;
+    height: 30%;
+    border: 1px;
+    background: rgb(156, 152, 152);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.wrapper .image{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.wrapper .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.wrapper icon{
+    font-size: 100px;
+    color: blue;
+}
+.wrapper text{
+    font-size: 20px;
+    color: blue;
+}
+.wrapper #cancel-btn{
+    position: absolute;
+    right: 0px;
+    left: 130px;
+    cursor: pointer;
+    width: 20px;
+    display: none;
+}
+.wrapper #cancel-btn1{
+    position: absolute;
+    right: 0px;
+    left: 130px;
+    cursor: pointer;
+    width: 20px;
+    display: none;
+}
+.wrapper .file-name{
+    position: absolute;
+    bottom: 0;
+    background: blue;
+    color:white;
+    width: 100%;
+    padding-left: 50px;
+    
+}
+.profile-pic #custom-btn{
+    color: white;
+    width: 100%;
+    font-size: medium;
+    cursor: pointer;
+    outline: none;
+   
+}
+.profile-pic #custom-btn1{
+    color: white;
+    width: 100%;
+    font-size: medium;
+    cursor: pointer;
+    outline: none;
+   
+}
+
+
+.card{
+    width: 400px;
+    height: 600px;
+    box-shadow: 0 0 40px 20px rgb(0,0,0,0.26);
+    perspective: 1000px;
+    border-radius: 10%;
+
+}
+.inner-box{
+    position: relative;
+    height: 100%;
+    width: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card-front, .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: lightcoral;
+    padding: 55px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    border-radius: 5%;
+
+}
+.card-back{
+    transform: rotateY(180deg);
+}
+.card h2{
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.input-box{
+    width:100%;
+    background: transparent;
+    border: 1px  solid#fff;
+    margin: 6px 0;
+    height: 32px;
+    border-radius: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+    text-align: center;
+    color: #fff;
+}
+
+::placeholder{
+    color: #fff;
+    font-size: 12px;
+
+}
+button{
+    width: 100%;
+    background: transparent;
+    border: 1ps solid#fff;
+    margin: 35px 0 10px;
+    height:32px ;
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+.submit-btn{
+    position: relative;
+}
+.submit-btn::after{
+    content: '\27a4';
+    color: #333;
+    line-height: 32px;
+    font-size: 17px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+}
+span{
+    font-size: 13px;
+    margin-left: 10px;
+}
+.card.btn{
+    margin-top: 70px;
+}
+.card a{
+    color: #fff;
+    text-decoration:none ;
+    display: block;
+    text-align: center;
+    font-size:13px ;
+    margin-top: 8px;
+
+}
+

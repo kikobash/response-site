@@ -1,0 +1,132 @@
+<html>
+    <head>
+        
+        <link rel="stylesheet" type="text/css" href="login.css">
+        <title>Login form design</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="inner-box" id="card">
+                    <div class="card-front">
+                        <div class="profile-pic">
+                            <div class="wrapper">
+                                <div class="image">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="content">
+                                    <div class="icon"><img src="logo-icon.png" height="20px"></div>
+                                   
+                                </div>
+                                <div id="cancel-btn"><img src="cancel.png"></div>
+                                
+                            </div>
+                            <input id="default-btn" type="file" hidden >
+                            <button onclick="defaultBtnActive()" id="custom-btn">choose photo</button>
+                        </div>
+                        <h2>LOGIN</h2>
+                        
+                            <input type="text" class="input-box" id="name_box" placeholder="Your name" required >
+                            <input type="password" class="input-box" placeholder="Enter password" required >
+                            <button onclick="submit()" class="submit-btn">Login</button>
+                            <input type="checkbox"><span>Remeber me</span>
+                        
+                    </div>
+                    
+
+            </div>
+             
+        </div>
+      <script>
+        const defaultBtn = document.querySelector("#default-btn");
+        const fileName = document.querySelector(".file-name");
+        const customBtn = document.querySelector("#custom-btn");
+        const img = document.querySelector("img");
+        var profile_link = "";
+
+        function defaultBtnActive(){
+            defaultBtn.click();
+        }
+        defaultBtn.addEventListener("change",function(){
+            const file= this.files[0];
+           if(file){
+            const reader = new FileReader();
+            reader.onload = function(){
+                const result = reader.result;
+                img.src=result;
+                profile_link = result;
+            }
+            reader.readAsDataURL(file);
+           }
+           if(this.value){
+            let valueStore = this.value;
+            fileName.textContent=valueStore;
+           }
+        });
+        const defaultBtn1 = document.querySelector("#default-btn1");
+        const fileName1 = document.querySelector(".file-name1");
+        const customBtn1 = document.querySelector("#custom-btn1");
+        const img1 = document.querySelector("img");
+        function defaultBtnActive(){
+            defaultBtn.click();
+        }
+        defaultBtn.addEventListener("change",function(){
+            const file= this.files[0];
+           if(file){
+            const reader = new FileReader();
+            reader.onload = function(){
+                const result = reader.result;
+                img.src=result;
+            }
+            reader.readAsDataURL(file);
+           }
+           if(this.value){
+            let valueStore = this.value;
+            fileName.textContent=valueStore;
+           }
+        });
+        
+       function submit(){
+            var name_box = document.getElementById("name_box")
+            alert(typeof(name_box.value))
+            if(name_box.value.strip != "" && profile_link != ""){
+                let current_profile = {
+                    name: name_box.value,
+                    pic: profile_link
+                };
+                current_profile = JSON.stringify(current_profile);
+                
+
+                if(localStorage.getItem("Profiles") != null){
+                    let profiles = localStorage.getItem("Profiles")
+                    profiles = JSON.parse(profiles)
+
+                    profiles.push(current_profile)
+                    localStorage.removeItem("Profiles")
+
+                    localStorage.setItem("Profiles", JSON.stringify(profiles))
+
+                }
+                else{
+                    let array = new Array()
+                    array.push(current_profile)
+
+                    array = JSON.stringify(array)
+                    localStorage.setItem("Profiles", array)
+                }
+
+                //store the info of the current user separately
+                if(localStorage.getItem("Current Profile") != null){
+                    localStorage.removeItem("Current Profile")
+                }
+
+                localStorage.setItem("Current Profile", current_profile)
+                window.open("main.html", '_self')
+            }
+            else{
+                alert("please fill in all of the fields including the pic")
+            }
+       }
+      </script>  
+    </body>
+</html>
